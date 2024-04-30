@@ -22,7 +22,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(MainActivity.this,Dashboard_1.class);
+                intent = new Intent(MainActivity.this, MenuTrabajador.class);
                 startActivity(intent);
             }
         });
