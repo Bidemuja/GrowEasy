@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">GrowEasy</string>
+    <string name="navigation_drawer_open">Abre el drawer de navegación</string>
+    <string name="navigation_drawer_close">Cierra el drawer de navegación</string>
 </resources>

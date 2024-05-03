@@ -2,6 +2,7 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.GrowEasy" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your dark theme here. -->
+        <!--<style name="android:statusBarColor">$00000000</style>-->
         <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
     </style>
 </resources>
