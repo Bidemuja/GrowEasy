@@ -35,7 +35,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         /*-------------------Tool Bar ---------------------*/
         setSupportActionBar(toolbar);
 
-        /*------------------Navigation Drawer Menu ---------*/
+        /*------------------Navigation Drawer Menu --------*/
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
