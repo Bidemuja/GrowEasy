@@ -1,0 +1,30 @@
+{
+  "project_info": {
+    "project_number": "210408509706",
+    "firebase_url": "https://groweasy-b989f-default-rtdb.firebaseio.com",
+    "project_id": "groweasy-b989f",
+    "storage_bucket": "groweasy-b989f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:210408509706:android:a5887db9ea85a1e51baaf3",
+        "android_client_info": {
+          "package_name": "com.example.groweasy"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCcn7PLXjV5MvSWz6RLm-4kiMYSnjKfcBo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
