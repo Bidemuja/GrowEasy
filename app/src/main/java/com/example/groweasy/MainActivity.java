@@ -12,6 +12,7 @@ import com.google.firebase.database.DatabaseReference;
 
 
 public class MainActivity extends AppCompatActivity {
+    private DatabaseReference chupenla;
     private Button btnIngresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
