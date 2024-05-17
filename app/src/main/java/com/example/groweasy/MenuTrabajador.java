@@ -20,9 +20,9 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MenuTrabajador extends AppCompatActivity {
 
-    private DatabaseReference prueba1;
+    private DatabaseReference groweasydb;
     Button btnImgMenu, btnHumedad;
-    TextView txthumedad;
+    TextView txthumedad, txtsuelo, txtluz, txtambiente;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,9 +31,12 @@ public class MenuTrabajador extends AppCompatActivity {
         btnHumedad = (Button) findViewById(R.id.btnHumedad);
 
         txthumedad= (TextView) findViewById(R.id.textView3);
-        prueba1= FirebaseDatabase.getInstance().getReference();
+        txtluz= (TextView) findViewById(R.id.textView3);
+        txtambiente= (TextView) findViewById(R.id.textView3);
+        txtsuelo= (TextView) findViewById(R.id.textView3);
+        groweasydb= FirebaseDatabase.getInstance().getReference();
 
-        prueba1.child("Persona").addValueEventListener(new ValueEventListener() {
+        groweasydb.child("Humedad").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
