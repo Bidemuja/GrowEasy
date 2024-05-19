@@ -237,7 +237,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llTemperaturaAmbiente"
+                android:id="@+id/llAmbiente"
                 android:layout_width="380dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="120dp"
@@ -256,12 +256,12 @@
                     app:cardElevation="5dp">
 
                     <RelativeLayout
-                        android:id="@+id/rlTemperaturaAmbiente"
+                        android:id="@+id/rlAmbiente"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/txtTemperaturaAmbiente"
+                            android:id="@+id/txtAmbiente"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -274,7 +274,7 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/imgTemperaturaAmbiente"
+                            android:id="@+id/imgAmbiente"
                             android:layout_width="53dp"
                             android:layout_height="67dp"
                             android:layout_alignParentTop="true"
@@ -307,7 +307,7 @@
                             android:textSize="30sp" />
 
                         <TextView
-                            android:id="@+id/txtActualTemperatura"
+                            android:id="@+id/txtActualAmbiente"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -330,7 +330,7 @@
                 android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/llTemperaturaAmbiente">
+                app:layout_constraintTop_toTopOf="@+id/llAmbiente">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
