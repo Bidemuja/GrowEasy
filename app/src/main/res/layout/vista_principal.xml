@@ -321,7 +321,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/llsSuelo"
+                android:id="@+id/llSuelo"
                 android:layout_width="380dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="120dp"
@@ -340,12 +340,12 @@
                     app:cardElevation="5dp">
 
                     <RelativeLayout
-                        android:id="@+id/rlTemperaturaSuelo"
+                        android:id="@+id/rlSuelo"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/txtTemperaturaSuelo"
+                            android:id="@+id/txtSuelo"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -358,7 +358,7 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/imgTemperaturaSuelo"
+                            android:id="@+id/imgSuelo"
                             android:layout_width="53dp"
                             android:layout_height="67dp"
                             android:layout_alignParentTop="true"
