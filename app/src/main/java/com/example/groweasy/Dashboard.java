@@ -28,9 +28,9 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.dashboard);
 
         /*--------------------Hooks-------------------------*/
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
+        drawerLayout = findViewById(R.id.dlPrincipal);
+        navigationView = findViewById(R.id.nvmenulateral);
+        toolbar = findViewById(R.id.tbPrincipal);
 
         /*-------------------Tool Bar ---------------------*/
         setSupportActionBar(toolbar);

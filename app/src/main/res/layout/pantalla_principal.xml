@@ -143,7 +143,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView2" />
 
     <TextView
-        android:id="@+id/txtluz"
+        android:id="@+id/txtVariableLuz"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="42dp"
@@ -283,7 +283,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView3" />
 
     <Button
-        android:id="@+id/button4"
+        android:id="@+id/btnDashboardLuz"
         android:layout_width="48dp"
         android:layout_height="98dp"
         android:background="@color/variant_grey"
@@ -292,7 +292,7 @@
         app:layout_constraintTop_toTopOf="@+id/imageView4" />
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
+        android:id="@+id/tbPrincipal"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:background="@drawable/grey_button"

@@ -28,7 +28,7 @@ public class MenuTrabajador extends AppCompatActivity {
         btnHumedad = (Button) findViewById(R.id.btnHumedad);
 
         txthumedad= (TextView) findViewById(R.id.txthumedad);
-        txtluz= (TextView) findViewById(R.id.txtluz);
+        txtluz= (TextView) findViewById(R.id.txtVariableLuz);
         txtambiente= (TextView) findViewById(R.id.txtambiente);
         txtsuelo= (TextView) findViewById(R.id.txtsuelo);
         groweasydb= FirebaseDatabase.getInstance().getReference();

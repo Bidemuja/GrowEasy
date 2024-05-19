@@ -2,7 +2,7 @@
 <androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/drawer_layout"
+    android:id="@+id/dlPrincipal"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
@@ -11,7 +11,7 @@
     <com.google.android.material.navigation.NavigationView
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
-        android:id="@+id/nav_view"
+        android:id="@+id/nvMenuLateral"
         app:headerLayout="@layout/header"
         app:menu="@menu/menu_principal"
         android:layout_gravity="start">
@@ -51,7 +51,7 @@
             android:layout_height="fill_parent">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/toolbar"
+                android:id="@+id/tbPrincipal"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:background="@drawable/grey_button"
@@ -66,7 +66,7 @@
                 app:titleMargin="0dp" />
 
             <LinearLayout
-                android:id="@+id/linearLayout"
+                android:id="@+id/llHumedad"
                 android:layout_width="380dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="120dp"
@@ -74,9 +74,10 @@
                 android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/toolbar">
+                app:layout_constraintTop_toTopOf="@+id/tbPrincipal">
 
                 <androidx.cardview.widget.CardView
+                    android:id="@+id/cvHumedad"
                     android:layout_width="0dp"
                     android:layout_height="match_parent"
                     android:layout_margin="3dp"
@@ -85,12 +86,12 @@
                     app:cardElevation="5dp">
 
                     <RelativeLayout
-                        android:id="@+id/relativeLayout1"
+                        android:id="@+id/rlHumedad"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/títuloHumedad"
+                            android:id="@+id/txtTituloHumedad"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -103,7 +104,7 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/imageView11"
+                            android:id="@+id/imgHumedad"
                             android:layout_width="53dp"
                             android:layout_height="67dp"
                             android:layout_alignParentTop="true"
@@ -113,7 +114,7 @@
                             app:srcCompat="@drawable/drop" />
 
                         <Button
-                            android:id="@+id/button3"
+                            android:id="@+id/btnDashboardHumedad"
                             android:layout_width="55dp"
                             android:layout_height="match_parent"
                             android:layout_alignParentTop="true"
@@ -125,7 +126,7 @@
                             app:layout_constraintEnd_toEndOf="parent" />
 
                         <TextView
-                            android:id="@+id/textView9"
+                            android:id="@+id/txtVariableHumedad"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -136,7 +137,7 @@
                             android:textSize="30sp" />
 
                         <TextView
-                            android:id="@+id/textView15"
+                            android:id="@+id/txtActualHumedad"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -151,7 +152,7 @@
             </LinearLayout>
 
             <LinearLayout
-                android:id="@+id/linearLayout2"
+                android:id="@+id/llLuz"
                 android:layout_width="380dp"
                 android:layout_height="120dp"
                 android:layout_marginTop="120dp"
@@ -159,7 +160,7 @@
                 android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout">
+                app:layout_constraintTop_toTopOf="@+id/llHumedad">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
@@ -170,12 +171,12 @@
                     app:cardElevation="5dp">
 
                     <RelativeLayout
-                        android:id="@+id/relativeLayout2"
+                        android:id="@+id/rlLuz"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content">
 
                         <TextView
-                            android:id="@+id/títuloHumedad2"
+                            android:id="@+id/txtTituloLuz"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -188,7 +189,7 @@
                             android:textStyle="bold" />
 
                         <ImageView
-                            android:id="@+id/imageView12"
+                            android:id="@+id/imgLuz"
                             android:layout_width="53dp"
                             android:layout_height="67dp"
                             android:layout_alignParentTop="true"
@@ -198,7 +199,7 @@
                             app:srcCompat="@drawable/sun" />
 
                         <Button
-                            android:id="@+id/button4"
+                            android:id="@+id/btnDashboardLuz"
                             android:layout_width="55dp"
                             android:layout_height="match_parent"
                             android:layout_alignParentTop="true"
@@ -210,7 +211,7 @@
                             app:layout_constraintEnd_toEndOf="parent" />
 
                         <TextView
-                            android:id="@+id/txtluz"
+                            android:id="@+id/txtVariableLuz"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -221,7 +222,7 @@
                             android:textSize="30sp" />
 
                         <TextView
-                            android:id="@+id/textView150"
+                            android:id="@+id/txtActualLuz"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_alignParentStart="true"
@@ -244,7 +245,7 @@
                 android:padding="5dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/linearLayout2">
+                app:layout_constraintTop_toTopOf="@+id/llLuz">
 
                 <androidx.cardview.widget.CardView
                     android:layout_width="0dp"
