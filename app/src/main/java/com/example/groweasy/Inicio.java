@@ -24,7 +24,7 @@ public class Inicio extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(Inicio.this, MenuTrabajador.class);
+                intent = new Intent(Inicio.this, VistaPrincipal.class);
                 startActivity(intent);
             }
         });
