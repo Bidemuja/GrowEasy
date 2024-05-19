@@ -15,7 +15,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class MenuTrabajador extends AppCompatActivity {
+public class VistaPrincipal extends AppCompatActivity {
 
     private DatabaseReference groweasydb;
     Button btnImgMenu, btnHumedad;
@@ -23,8 +23,8 @@ public class MenuTrabajador extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.pantalla_principal);
-        btnImgMenu = (Button) findViewById(R.id.imgLogoMenu);
+        setContentView(R.layout.vista_principal);
+        /*btnImgMenu = (Button) findViewById(R.id.imgLogoMenu);
         btnHumedad = (Button) findViewById(R.id.btnHumedad);
 
         txthumedad= (TextView) findViewById(R.id.txthumedad);
@@ -97,7 +97,7 @@ public class MenuTrabajador extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(MenuTrabajador.this, MainActivity.class);
+                intent = new Intent(VistaPrincipal.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -106,10 +106,10 @@ public class MenuTrabajador extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(MenuTrabajador.this, Dashboard.class);
+                intent = new Intent(VistaPrincipal.this, Dashboard.class);
                 startActivity(intent);
             }
-        });
+        });*/
     }
 
 }

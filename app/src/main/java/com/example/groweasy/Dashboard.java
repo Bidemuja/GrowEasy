@@ -49,7 +49,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(Dashboard.this, MainActivity.class);
+                intent = new Intent(Dashboard.this, VistaPrincipal.class);
                 startActivity(intent);
             }
         });
@@ -60,8 +60,4 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         return true;
     }
 
-    /*@Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
-        return false;
-    }*/
 }
