@@ -97,7 +97,7 @@ public class MenuTrabajador extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(MenuTrabajador.this, MainActivity.class);
+                intent = new Intent(MenuTrabajador.this, Inicio.class);
                 startActivity(intent);
             }
         });

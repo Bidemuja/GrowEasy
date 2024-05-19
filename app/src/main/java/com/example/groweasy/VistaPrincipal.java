@@ -97,7 +97,7 @@ public class VistaPrincipal extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(VistaPrincipal.this, MainActivity.class);
+                intent = new Intent(VistaPrincipal.this, Inicio.class);
                 startActivity(intent);
             }
         });

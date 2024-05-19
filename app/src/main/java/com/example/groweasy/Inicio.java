@@ -6,18 +6,17 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 
 
-public class MainActivity extends AppCompatActivity {
-    private DatabaseReference chupenla;
+public class Inicio extends AppCompatActivity {
+
     private Button btnIngresar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.inicio);
 
         btnIngresar = (Button) findViewById(R.id.btnIngresar);
 
@@ -25,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(MainActivity.this, MenuTrabajador.class);
+                intent = new Intent(Inicio.this, MenuTrabajador.class);
                 startActivity(intent);
             }
         });
