@@ -98,8 +98,9 @@
                     android:backgroundTint="@color/grey"
                     app:cardElevation="5dp" />
 
-                <androidx.cardview.widget.CardView
-                    android:layout_width="0dp"
+                <com.ekn.gruzer.gaugelibrary.ArcGauge
+                    android:id="@+id/imgTemperaturaHuemedad"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_margin="10dp"
                     android:layout_weight="1"
