@@ -11,6 +11,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.view.GravityCompat;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
@@ -20,7 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
-public class VistaPrincipal extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener{
+public class VistaPrincipal extends AppCompatActivity implements
+        NavigationView.OnNavigationItemSelectedListener{
 
     private DatabaseReference groweasydb;
     DrawerLayout drawerLayout;
@@ -33,6 +35,7 @@ public class VistaPrincipal extends AppCompatActivity implements NavigationView.
         super.onCreate(savedInstanceState);
         setContentView(R.layout.vista_principal);
 
+        /* ---------------------------MENÚ LATERAL DE NAVEGACIÓN -------------------------------------------*/
         /*--------------------Hooks-------------------------*/
         drawerLayout = findViewById(R.id.dlPrincipal);
         navigationView = findViewById(R.id.nvMenuLateral);
@@ -49,15 +52,26 @@ public class VistaPrincipal extends AppCompatActivity implements NavigationView.
 
         navigationView.setNavigationItemSelectedListener(this);
 
-        btnHumedad = (Button) findViewById(R.id.btnDashboardHumedad);
+        if (savedInstanceState == null){
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Dashboard2Fragment()).commit();
+            navigationView.setCheckedItem(R.id.nav_home);
+        }
 
+        /* --------------------------FIN VARIABLES MENÚ LATERAL NAVEGACIÓN --------------------------------*/
+
+/*
+        btnHumedad = (Button) findViewById(R.id.btnDashboardHumedad);
         txthumedad= (TextView) findViewById(R.id.txtVariableHumedad);
         txtluz= (TextView) findViewById(R.id.txtVariableLuz);
         txtambiente= (TextView) findViewById(R.id.txtVariableAmbiente);
         txtsuelo= (TextView) findViewById(R.id.txtVariableSuelo);
-        groweasydb= FirebaseDatabase.getInstance().getReference();
 
-        groweasydb.child("Humedad").addValueEventListener(new ValueEventListener() {
+        /* -------------------------- INSTANCIAR BASE DE DATOS -------------------------------------*/
+  /*      groweasydb= FirebaseDatabase.getInstance().getReference();
+
+
+        /*-------------------- Obtener los valores desde la base de datos de Firebase --------------*/
+    /*    groweasydb.child("Humedad").addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
@@ -117,8 +131,8 @@ public class VistaPrincipal extends AppCompatActivity implements NavigationView.
             }
         });
 
-
-        btnHumedad.setOnClickListener(new View.OnClickListener(){
+        /*----------------------------------------- FIN ---------------------------------------------*/
+      /*  btnHumedad.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
                 Intent intent;
@@ -126,11 +140,34 @@ public class VistaPrincipal extends AppCompatActivity implements NavigationView.
                 startActivity(intent);
             }
         });
-    }
+*/    }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new MenuPrincipalFragment()).commit();
+                break;
+            case R.id.generarReporte:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Dashboard2Fragment()).commit();
+                break;
+
+            case R.id.SoporteTecnico:
+                getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Test()).commit();
+                break;
+        }
+        drawerLayout.closeDrawer(GravityCompat.START);
         return true;
+    }
+
+    @Override
+    public void onBackPressed(){
+        if (drawerLayout.isDrawerOpen(GravityCompat.START)){
+            drawerLayout.closeDrawer(GravityCompat.START);
+        }else{
+            super.onBackPressed();
+        }
+
     }
 
 }

@@ -13,6 +13,7 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 
 import com.google.android.material.navigation.NavigationView;
+import com.example.groweasy.R;
 
 public class Dashboard extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
@@ -22,6 +23,8 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
     NavigationView navigationView;
     Toolbar toolbar;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,7 +32,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
 
         /*--------------------Hooks-------------------------*/
         drawerLayout = findViewById(R.id.dlPrincipal);
-        navigationView = findViewById(R.id.nvmenulateral);
+        navigationView = findViewById(R.id.nvMenuLateral);
         toolbar = findViewById(R.id.tbPrincipal);
 
         /*-------------------Tool Bar ---------------------*/
@@ -55,9 +58,26 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         });
     }
 
+
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+        selectedItemNav(item);
         return true;
     }
+
+    private void selectedItemNav(MenuItem item) {
+        switch (item.getItemId()){
+            case R.id.nav_home:
+                Intent intent = new Intent(Dashboard.this, VistaPrincipal.class);
+                startActivity(intent);
+                break;
+
+            case R.id.generarReporte:
+                Intent intent2 = new Intent(Dashboard.this, Inicio.class);
+                startActivity(intent2);
+                break;
+        }
+    }
+
 
 }

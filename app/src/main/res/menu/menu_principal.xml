@@ -5,26 +5,28 @@
 
         <item
             android:id="@+id/nav_home"
-            android:title="Metayer"
             android:icon="@drawable/home_icon"
-            ></item>
+            android:title="Inicio"
+            android:checked="true"></item>
 
         <item
             android:id="@+id/generarReporte"
             android:icon="@drawable/home_icon"
             android:title="Generar Reporte"
-            ></item>
+            android:checked="true"></item>
 
         <item
             android:id="@+id/parametrosEstablecidos"
             android:icon="@drawable/home_icon"
             android:title="Parámetros establecidos"
+            android:checked="true"
             ></item>
 
         <item
             android:id="@+id/SoporteTecnico"
             android:icon="@drawable/home_icon"
             android:title="Soporte Técnico"
+            android:checked="true"
             ></item>
     </group>
 
