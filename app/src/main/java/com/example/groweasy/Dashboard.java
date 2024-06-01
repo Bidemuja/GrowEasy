@@ -28,14 +28,14 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         setContentView(R.layout.dashboard);
 
         /*--------------------Hooks-------------------------*/
-        drawerLayout = findViewById(R.id.drawer_layout);
-        navigationView = findViewById(R.id.nav_view);
-        toolbar = findViewById(R.id.toolbar);
+        drawerLayout = findViewById(R.id.dlPrincipal);
+        navigationView = findViewById(R.id.nvmenulateral);
+        toolbar = findViewById(R.id.tbPrincipal);
 
         /*-------------------Tool Bar ---------------------*/
         setSupportActionBar(toolbar);
 
-        /*------------------Navigation Drawer Menu ---------*/
+        /*------------------Navigation Drawer Menu --------*/
         navigationView.bringToFront();
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawerLayout, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawerLayout.addDrawerListener(toggle);
@@ -49,7 +49,7 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
             @Override
             public void onClick(View v) {
                 Intent intent;
-                intent = new Intent(Dashboard.this, MainActivity.class);
+                intent = new Intent(Dashboard.this, VistaPrincipal.class);
                 startActivity(intent);
             }
         });
@@ -60,8 +60,4 @@ public class Dashboard extends AppCompatActivity implements NavigationView.OnNav
         return true;
     }
 
-    /*@Override
-    public boolean onNavigationItemSelected(@NonNull MenuItem menuItem){
-        return false;
-    }*/
 }
