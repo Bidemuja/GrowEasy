@@ -1,0 +1,103 @@
+#include <ESP8266Firebase.h>
+#include <ESP8266WiFi.h>
+#include <DHT.h>
+
+#define _SSID "iPhone"          // Tu SSID de WiFi
+#define _PASSWORD ""    // Tu contraseña de WiFi
+#define REFERENCE_URL "groweasyapp-default-rtdb.firebaseio.com"  // La URL de referencia de tu proyecto Firebase
+
+#define DHTPIN 4                 // Pin al que está conectado el DHT11
+#define DHTTYPE DHT11            // Definiendo el tipo de sensor DHT
+
+DHT dht(DHTPIN, DHTTYPE);
+Firebase firebase(REFERENCE_URL);
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(LED_BUILTIN, OUTPUT);
+  digitalWrite(LED_BUILTIN, LOW);
+  WiFi.mode(WIFI_STA);
+  WiFi.disconnect();
+  delay(1000);
+
+  // Connect to WiFi
+  Serial.println();
+  Serial.println();
+  Serial.print("Connecting to: ");
+  Serial.println(_SSID);
+  WiFi.begin(_SSID, _PASSWORD);
+
+  while (WiFi.status() != WL_CONNECTED) {
+    delay(500);
+    Serial.print("-");
+  }
+
+  Serial.println("");
+  Serial.println("WiFi Connected");
+
+  // Print the IP address
+  Serial.print("IP Address: ");
+  Serial.print("http://");
+  Serial.print(WiFi.localIP());
+  Serial.println("/");
+  digitalWrite(LED_BUILTIN, HIGH);
+
+  // Inicializar el sensor DHT
+  dht.begin();
+
+  // Ejemplos de establecer valores String, int y float.
+  firebase.setString("Example/setString", "It's Working");
+  firebase.setInt("Example/setInt", 123);
+  firebase.setFloat("Example/setFloat", 45.32);
+
+  // Ejemplos de enviar valores String, int y float.
+  firebase.pushString("sensors/sensor1/humedad", "33");
+  firebase.pushInt("sensors/sensor1/luz", 33);
+  firebase.pushFloat("sensors/sensor1/t_ambiente", 26);
+  firebase.pushFloat("sensors/sensor1/t_suelo", 28);
+
+  // Ejemplo de obtener un String.
+  String data1 = firebase.getString("Example/setString");
+  Serial.print("Received String:\t");
+  Serial.println(data1);
+
+  // Ejemplo de obtener un int.
+  int data2 = firebase.getInt("Example/setInt");
+  Serial.print("Received Int:\t\t");
+  Serial.println(data2);
+
+  // Ejemplo de obtener un float.
+  float data3 = firebase.getFloat("Example/setFloat");
+  Serial.print("Received Float:\t\t");
+  Serial.println(data3);
+
+  // Ejemplo de eliminación de datos.
+  firebase.deleteData("Example");
+}
+
+void loop() {
+  // Leer valores del sensor DHT11
+  float h = dht.readHumidity();
+  float t = dht.readTemperature();
+
+  // Comprobar si las lecturas son válidas
+  if (isnan(h) || isnan(t)) {
+    Serial.println("Failed to read from DHT sensor!");
+    return;
+  }
+
+  // Imprimir valores leídos
+  Serial.print("Humidity: ");
+  Serial.print(h);
+  Serial.print(" %\t");
+  Serial.print("Temperature: ");
+  Serial.print(t);
+  Serial.println(" *C");
+
+  // Enviar valores a Firebase
+  firebase.pushFloat("sensors/sensor1/humedad", h);
+  firebase.pushFloat("sensors/sensor1/t_ambiente", t);
+
+  // Esperar 10 segundos antes de la próxima lectura
+  delay(10000);
+}
